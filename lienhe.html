@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/Mau1.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Trang Chủ</a></li>
+        <li><a href="donam.html">Đồ nam</a></li>
+        <li><a href="iphone.html">Iphone</a></li>
+        <li><a href="nuochoa.html">Nuoc hoa</a></li>
+        <li><a href="lienhe.html">Liên Hệ</a></li>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- InstanceBeginEditable name="EditRegion1" -->
+<script>
+  function checkCode() {
+    var code = document.getElementById("promoCode").value.toLowerCase();
+    var result = document.getElementById("result");
+
+    if (code === "lucky01" || code === "salevp") {
+      result.style.color = "green";
+      result.innerHTML = "🎉 Chúc mừng! Bạn nhận được vé FREE SHIP";
+    } else {
+      result.style.color = "red";
+      result.innerHTML = "❌ Mã ưu đãi không hợp lệ";
+    }
+  }
+  
+  
+function guiDi() {
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var genders = document.getElementsByName("gender");
+    var interests = document.getElementsByClassName("interest");
+
+    // 1. Kiểm tra tên đăng nhập
+    if (username === "") {
+        alert("Tên đăng nhập không được bỏ trống!");
+        return;
+    }
+
+    // 2. Kiểm tra giới tính
+    var genderChecked = false;
+    for (var i = 0; i < genders.length; i++) {
+        if (genders[i].checked) {
+            genderChecked = true;
+            break;
+        }
+    }
+    if (!genderChecked) {
+        alert("Vui lòng chọn giới tính!");
+        return;
+    }
+
+    // 3. Kiểm tra email
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Email không hợp lệ!");
+        return;
+    }
+
+    // 4. Kiểm tra mục quan tâm
+    var interestChecked = false;
+    for (var j = 0; j < interests.length; j++) {
+        if (interests[j].checked) {
+            interestChecked = true;
+            break;
+        }
+    }
+    if (!interestChecked) {
+        alert("Vui lòng chọn ít nhất một mục quan tâm!");
+        return;
+    }
+
+    // 5. Thành công
+    alert("Gửi khảo sát thành công! Cảm ơn bạn 😊");
+
+    // 6. Mở Gmail
+    window.open("https://mail.google.com", "_blank");
+}
+function phucHoi() {
+    document.getElementById("surveyForm").reset();
+}
+// 6. Đổi màu nền
+function doiMau() {
+    document.body.style.backgroundColor = getRandomColor();
+}
+
+function getRandomColor() {
+    var colors = ["#f8c1c1ff", "#f9d2dfff", "#b6d8f1ff", "#b9fabfff"];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+</script>
+<style>
+.cd {
+    width: 600px;
+    margin: 40px auto;
+    border: 3px solid blue;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.row {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+button {
+    margin-right: 10px;
+    display: inline;
+}
+
+.center {
+    text-align: center;
+}
+</style>
+
+<div class="cd">
+        <h2>PHIẾU THĂM DÒ Ý KIẾN</h2>
+
+        <form id="surveyForm">
+            <div class="row">
+                Tên đăng nhập:
+                <input type="text" id="username">
+                &nbsp;&nbsp;
+                Giới tính:
+                <input type="radio" name="gender" value="Nam"> Nam
+                <input type="radio" name="gender" value="Nữ"> Nữ
+            </div>
+
+            <div class="row">
+                Địa chỉ Email:
+                &nbsp;&nbsp;&nbsp;<input type="text" id="email">
+            </div>
+
+            <div class="row2">
+                <p>Những mục bạn thường quan tâm trên Internet</p>
+
+                <label><input type="checkbox" class="interest"> Tin tức</label><br>
+                <label><input type="checkbox" class="interest"> Giải trí</label><br>
+                <label><input type="checkbox" class="interest"> Góc học tập</label><br>
+                <label><input type="checkbox" class="interest"> Các mục khác</label>
+            </div>
+
+
+            <div class="row center">
+                <button type="button" onclick="guiDi()">Gửi đi</button>
+                <button type="button" onclick="phucHoi()">Phục hồi</button>
+                <button type="button" onclick="doiMau()">Đổi màu </button>
+            </div>
+
+        </form>
+    </div>
+<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="EditRegion3" -->
+<!-- InstanceEndEditable --><br>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+</body>
+<!-- InstanceEnd --></html>
